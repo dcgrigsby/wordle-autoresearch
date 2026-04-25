@@ -1,0 +1,16 @@
+diff --git a/solver.py b/solver.py
+index 2127999..a482b32 100644
+--- a/solver.py
++++ b/solver.py
+@@ -75,8 +75,9 @@ class Solver:
+             for i in cand_indices:
+                 patterns[row[i]] += 1
+             entropy = sum(-(c / n) * math.log2(c / n) for c in patterns.values())
+-            # Tiebreak: prefer guesses that are themselves candidates (1/n win chance this turn)
+-            key = (entropy, 1 if guess in cand_set else 0)
++            # Tiebreak 1: smaller worst-case bucket (better worst-case finishing time)
++            # Tiebreak 2: prefer in-candidate (1/n win chance this turn)
++            key = (entropy, -max(patterns.values()), 1 if guess in cand_set else 0)
+             if best_key is None or key > best_key:
+                 best_key = key
+                 best_word = guess
