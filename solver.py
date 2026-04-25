@@ -32,7 +32,7 @@ class Solver:
     def next_guess(self, state):
         cands = state["candidates"]
         if state["turn"] == 0:
-            return "crane"
+            return "salet"
         if len(cands) == 1:
             return cands[0]
         freq = Counter()
