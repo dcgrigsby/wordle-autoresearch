@@ -12,6 +12,7 @@ Baseline strategy: fixed opener "crane", then greedy pick from remaining
 candidate answers by sum of unique-letter frequencies. Expected baseline
 average: ~4.0–4.2 guesses on the 2,314-answer set.
 """
+import math
 from collections import Counter
 from pathlib import Path
 
@@ -35,11 +36,17 @@ class Solver:
             return "salet"
         if len(cands) == 1:
             return cands[0]
-        freq = Counter()
-        for w in cands:
-            for c in set(w):
-                freq[c] += 1
-        return max(cands, key=lambda w: sum(freq[c] for c in set(w)))
+        n = len(cands)
+        best_word, best_entropy = None, -1.0
+        for guess in cands:
+            patterns = Counter()
+            for ans in cands:
+                patterns[score_guess(guess, ans)] += 1
+            entropy = sum(-(c / n) * math.log2(c / n) for c in patterns.values())
+            if entropy > best_entropy:
+                best_entropy = entropy
+                best_word = guess
+        return best_word
 
     def update(self, state, guess, feedback):
         new_cands = [w for w in state["candidates"] if score_guess(guess, w) == feedback]
