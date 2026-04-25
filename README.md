@@ -31,12 +31,7 @@ One experiment (after editing `solver.py`):
 uv run run_experiment.py "use entropy maximization for guess 2+"
 ```
 
-View progress locally:
-```
-open autoresearch/dashboard.html
-```
-
-Or view the [live dashboard](https://dcgrigsby.github.io/wordle-autoresearch/autoresearch/dashboard.html) on GitHub Pages.
+View the [live dashboard](https://dcgrigsby.github.io/wordle-autoresearch/autoresearch/dashboard.html) to see how this works.
 
 ## Metric
 
