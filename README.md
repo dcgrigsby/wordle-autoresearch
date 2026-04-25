@@ -40,3 +40,14 @@ open autoresearch/dashboard.html
 
 `avg_guesses` over all 2,314 answers. Failures (> 6 turns) count as 7.
 Lower is better. Known floor with full lookahead: ~3.42.
+
+## License & Warranty
+
+This project was created by [Claude Code](https://claude.com/claude-code) and is
+distributed under the Apache 2.0 License. See the `LICENSE` file for full details.
+
+**Important:** This project comes with **no warranty**. It is provided "as is" without
+any guarantees of merchantability, fitness for a particular purpose, or correctness.
+You are solely responsible for determining the appropriateness of using this software
+and assume all risks associated with its use. See the Apache 2.0 License for complete
+terms and liability limitations.
