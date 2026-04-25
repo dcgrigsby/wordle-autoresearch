@@ -1,0 +1,1 @@
+{"ts": "2026-04-25T15:20:00", "exp": 0, "hypothesis": "baseline: opener=crane, then greedy by unique-letter frequency", "metric": 3.6613, "best": 3.6613, "success_rate": 0.9922, "failures": 18, "histogram": {"1": 1, "2": 141, "3": 921, "4": 927, "5": 246, "6": 61, "7+": 18}, "elapsed_s": 3.01, "decision": "baseline", "reason": "starting point"}
