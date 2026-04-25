@@ -67,7 +67,7 @@ class Solver:
         cand_set = set(cands)
         # Mid-range: scan all answers, not just remaining candidates, so we can
         # pick a non-candidate "splitter" word when the cands share too many letters
-        pool = self.answers if 2 < n <= 30 else cands
+        pool = self.answers if 2 < n <= 100 else cands
         best_word, best_key = None, None
         for guess in pool:
             row = self._pattern_table[guess]
