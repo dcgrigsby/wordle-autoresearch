@@ -23,12 +23,12 @@ autoresearch/dashboard.html  # human-readable visualizer
 
 Baseline:
 ```
-python3 eval.py
+uv run eval.py
 ```
 
 One experiment (after editing `solver.py`):
 ```
-python3 run_experiment.py "use entropy maximization for guess 2+"
+uv run run_experiment.py "use entropy maximization for guess 2+"
 ```
 
 View progress:

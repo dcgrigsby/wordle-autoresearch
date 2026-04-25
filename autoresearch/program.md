@@ -34,7 +34,7 @@ improvements.
 
 1. Read `solver.py` and the last few entries in `log.jsonl` for context.
 2. Form **one** hypothesis. Edit `solver.py` to express it.
-3. Run: `python run_experiment.py "<one-line hypothesis>"`
+3. Run: `uv run run_experiment.py "<one-line hypothesis>"`
 4. The wrapper handles diff capture, scoring, keep/revert decision, log
    append, and dashboard regeneration. Read its output and decide the next
    hypothesis.

@@ -1,0 +1,6 @@
+[project]
+name = "wordle-autoresearch"
+version = "0.1.0"
+description = "Autoresearch loop for a Wordle solver"
+requires-python = ">=3.11"
+dependencies = []

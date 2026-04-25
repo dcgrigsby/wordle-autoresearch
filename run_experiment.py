@@ -67,7 +67,7 @@ def main():
     (EXP / f"{exp_n:03d}.diff").write_text(diff)
 
     print(f"=== experiment #{exp_n}: {hypothesis} ===")
-    out, code = sh("python3 eval.py")
+    out, code = sh("uv run eval.py")
     print(out)
 
     bsf = best_so_far(log)
@@ -84,7 +84,7 @@ def main():
             "decision": "reverted",
             "reason": "eval crashed (non-zero exit)",
         })
-        sh("python3 viz.py")
+        sh("uv run viz.py")
         sys.exit(1)
 
     try:
@@ -100,7 +100,7 @@ def main():
             "decision": "reverted",
             "reason": f"eval output not JSON-parseable: {e}",
         })
-        sh("python3 viz.py")
+        sh("uv run viz.py")
         sys.exit(1)
 
     metric = result["avg_guesses"]
@@ -131,7 +131,7 @@ def main():
         "reason": reason,
     }
     append_log(entry)
-    sh("python3 viz.py")
+    sh("uv run viz.py")
     print(f"=> {decision}: {reason}")
 
 
